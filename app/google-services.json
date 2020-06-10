@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "189564170645",
+    "firebase_url": "https://codxchat.firebaseio.com",
+    "project_id": "codxchat",
+    "storage_bucket": "codxchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189564170645:android:05b0a5169c411e59f7469c",
+        "android_client_info": {
+          "package_name": "com.trap9.codxchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189564170645-64aar46f8b67nila2loe911f6bg5o8fa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-U_NTk9QaB0zcp24rfX1sUpEAYGCptBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189564170645-64aar46f8b67nila2loe911f6bg5o8fa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
