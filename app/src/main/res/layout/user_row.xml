@@ -13,15 +13,19 @@
             tools:ignore="MissingConstraints">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@drawable/ic_person"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp" android:id="@+id/iv_user_row"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/name" end />
+            android:text="@string/name"
+            android:layout_toEndof="@id/iv_user_row"/>
+
+        </RelativeLayout>
+
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
