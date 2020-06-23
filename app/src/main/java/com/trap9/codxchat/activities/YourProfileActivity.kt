@@ -58,8 +58,10 @@ class YourProfileActivity : AppCompatActivity() {
                 tv_display_name_profile.text = display_name
                 tv_status_profile.text = status
 
-                if (image != null)
-                    Picasso.get().load(image).placeholder(R.drawable.ic_person).into(iv_image_profile)
+                if (image != "default") {
+                    Picasso.get().load(image).placeholder(R.drawable.ic_person)
+                        .into(iv_image_profile)
+                }
             }
         })
         btn_change_username.setOnClickListener{
