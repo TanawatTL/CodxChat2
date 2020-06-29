@@ -59,8 +59,7 @@ class YourProfileActivity : AppCompatActivity() {
                 tv_status_profile.text = status
 
                 if (image != "default") {
-                    Picasso.get().load(image).placeholder(R.drawable.ic_person)
-                        .into(iv_image_profile)
+                    Picasso.get().load(image).placeholder(R.drawable.ic_person).into(iv_user_image)
                 }
             }
         })
@@ -86,9 +85,9 @@ class YourProfileActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == GALLERY_ID && resultCode == Activity.RESULT_OK) {
+        if (requestCode == GALLERY_ID) {
             var image = data!!.data
-            CropImage.activity(image).setAspectRatio(1,1)
+            CropImage.activity(image).setAspectRatio(1,1).start(this)
         }
 
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == Activity.RESULT_OK){
@@ -106,7 +105,7 @@ class YourProfileActivity : AppCompatActivity() {
             var byteArray = ByteArrayOutputStream()
             thumbBitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArray)
             var thumbByteArray = byteArray.toByteArray()
-            var userId = mAuth!!.currentUser
+            var userId = mAuth!!.currentUser!!.uid
 
             var imageRef = mStorage!!.reference.child("profile_image").child("$userId.jpg")
             var thumbRef = mStorage!!.reference.child("profile_image").child("thump_image").child("$userId.jpg")
@@ -141,7 +140,7 @@ class YourProfileActivity : AppCompatActivity() {
                                 updateObject.put("image",imageUri)
                                 updateObject.put("thumb_image",thumbUri)
 
-                                mDatabase!!.reference.child("Users").child(userId.toString())
+                                mDatabase!!.reference.child("Users").child(userId)
                                     .updateChildren(updateObject)
                                     .addOnCompleteListener {
                                         if (task.isSuccessful){

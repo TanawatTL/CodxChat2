@@ -4,49 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.YourProfileActivity">
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="205dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="60dp"
-        android:text="Edit Your Profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    tools:context=".activities.ProfileActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_user_image"
-        android:layout_width="116dp"
-        android:layout_height="96dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="108dp"
         android:src="@drawable/ic_person"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/tv_status_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Status"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_display_name_profile" />
-
-    <TextView
         android:id="@+id/tv_display_name_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Displayname"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_user_image" />
+
+    <TextView
+        android:id="@+id/tv_status_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Status"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_image_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_display_name_profile" />
 
+    <Button
+        android:id="@+id/btn_send_massage_profile"
+        android:layout_width="205dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="120dp"
+        android:text="Send Massage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
